@@ -11,7 +11,6 @@ Also this app is hosted on Heroku.
 **Used languages**
 * HTML
 * JavaScript
-* ejs
 
 **Used Server**
 * Heroku
@@ -24,3 +23,4 @@ Also this app is hosted on Heroku.
 * body-parser
 * mongoose
 * lodash
+* ejs
