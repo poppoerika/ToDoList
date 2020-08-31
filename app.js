@@ -13,7 +13,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"))
 
 // Create/connect to a database.
-mongoose.connect("mongodb+srv://admin-erika:Gaku0926!@cluster0.tz4zi.mongodb.net/todolistDB", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+// mongoose connection url is in a separate file
+mongoose.connect("", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 // Create a new Schema
 const itemsSchema = {
