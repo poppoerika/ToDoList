@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
-const e = require("express");
+const ejs = require("express");
 const _ = require("lodash");
 
 const app = express();
@@ -11,6 +11,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"))
+app.set("view engine", "ejs");
 
 // Create/connect to a database.
 // mongoose connection url is in a separate file
@@ -43,9 +44,6 @@ const item3 = new Item({
 });
 
 const defaultItems = [item1, item2, item3];
-
-
-app.set("view engine", "ejs");
 
 app.get("/", function(req, res){
     Item.find({}, function(err, results){
