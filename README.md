@@ -24,3 +24,5 @@ Also this app is hosted on Heroku.
 * mongoose
 * lodash
 * ejs
+
+![Screenshot](todolist.png)
