@@ -47,7 +47,22 @@ const item3 = new Item({
 
 const defaultItems = [item1, item2, item3];
 
+
 app.get("/", function(req, res){
+    function resolvePromise() {
+        return rejectPromise();
+      }
+      
+      function rejectPromise() {
+        return Promise.reject();
+      }
+      
+      resolvePromise().then(() => {
+        console.log('resolved');
+      }).catch((err) => {
+        console.log('errored');
+      });
+      
     Item.find({}, function(err, results){
         if (results.length === 0) {
             // Insert documents into Item table
