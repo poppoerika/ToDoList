@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
@@ -15,7 +16,7 @@ app.set("view engine", "ejs");
 
 // Create/connect to a database.
 // mongoose connection url is in a separate file
-mongoose.connect("", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 // Create a new Schema
 const itemsSchema = {
