@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"))
 app.set("view engine", "ejs");
 
+
 // Create/connect to a database.
 // mongoose connection url is in a separate file
 mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
